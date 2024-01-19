@@ -7,5 +7,5 @@ terraform {
 }
 
 provider "kubernetes" {
-  config_path = "./clustyconfig"
+  config_path = "clustyconfig"
 }
