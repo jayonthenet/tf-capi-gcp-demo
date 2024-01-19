@@ -1,17 +1,11 @@
 terraform {
   required_providers {
     kubernetes = {
-      source  = "hashicorp/kubernetes"
-   }
-    helm = {
-      source = "hashicorp/helm"
-    }
-    humanitec = {
-      source = "humanitec/humanitec"
+      source = "hashicorp/kubernetes"
     }
   }
 }
 
 provider "kubernetes" {
-  config_path = "kubeconfig"
+  config_path = "clustyconfig"
 }
