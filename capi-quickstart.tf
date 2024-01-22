@@ -41,7 +41,7 @@ resource "kubernetes_manifest" "gcpcluster_capi_quickstart" {
         "name" = "default"
       }
       "project" = "clemens-juette-gcp"
-      "region" = "europe-west3-a"
+      "region" = "europe-west3"
     }
   }
 }
@@ -98,6 +98,7 @@ resource "kubernetes_manifest" "kubeadmcontrolplane_capi_quickstart_control_plan
       "version" = "v1.26.7"
     }
   }
+  computed_fields = ["spec.kubeadmConfigSpec.clusterConfiguration.apiServer.timeoutForControlPlane"]
 }
 
 resource "kubernetes_manifest" "gcpmachinetemplate_capi_quickstart_control_plane" {
