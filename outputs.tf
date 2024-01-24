@@ -4,8 +4,8 @@ output "kubeconfig" {
 }
 
 output "cluster_data" {
-    value = yamldecode(data.kubernetes_secret.example.data["value"]).clusters[0].cluster
-    sensitive = true
+    value = nonsensitive(yamldecode(data.kubernetes_secret.example.data["value"]).clusters[0].cluster)
+    sensitive = false
 }
 
 output "cluster_type" {
