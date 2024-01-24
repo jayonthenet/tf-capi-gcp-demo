@@ -94,11 +94,11 @@ resource "kubernetes_manifest" "kubeadmcontrolplane_capi_quickstart_control_plan
           "name" = "capi-quickstart-control-plane"
         }
       }
-      "replicas" = 3
+      "replicas" = 1
       "version" = "v1.26.7"
     }
   }
-  computed_fields = ["spec.kubeadmConfigSpec.clusterConfiguration.apiServer.timeoutForControlPlane"]
+  computed_fields = ["spec.kubeadmConfigSpec.clusterConfiguration.apiServer.timeoutForControlPlane"]  
 }
 
 resource "kubernetes_manifest" "gcpmachinetemplate_capi_quickstart_control_plane" {
@@ -112,7 +112,7 @@ resource "kubernetes_manifest" "gcpmachinetemplate_capi_quickstart_control_plane
     "spec" = {
       "template" = {
         "spec" = {
-          "image" = "projects/clemens-juette-gcp/global/images/cluster-api-ubuntu-2204-v1-26-7-1705650560"
+          "image" = "projects/clemens-juette-gcp/global/images/cluster-api-ubuntu-2204-v1-26-7-1706084467"
           "instanceType" = "n1-standard-2"
         }
       }
@@ -130,7 +130,7 @@ resource "kubernetes_manifest" "machinedeployment_capi_quickstart_md_0" {
     }
     "spec" = {
       "clusterName" = "capi-quickstart"
-      "replicas" = 3
+      "replicas" = 1
       "selector" = {
         "matchLabels" = null
       }
@@ -167,7 +167,7 @@ resource "kubernetes_manifest" "gcpmachinetemplate_capi_quickstart_md_0" {
     "spec" = {
       "template" = {
         "spec" = {
-          "image" = "projects/clemens-juette-gcp/global/images/cluster-api-ubuntu-2204-v1-26-7-1705650560"
+          "image" = "projects/clemens-juette-gcp/global/images/cluster-api-ubuntu-2204-v1-26-7-1706084467"
           "instanceType" = "n1-standard-2"
         }
       }
