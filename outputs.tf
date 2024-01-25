@@ -18,5 +18,5 @@ output "credentials" {
 }
 
 output "load_balancer" {
-    value = "capitestclusty2.funnyco.de"
+    value = "funnyco.de"
 }
