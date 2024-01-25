@@ -18,5 +18,5 @@ output "credentials" {
 }
 
 output "load_balancer" {
-    value = "192.168.0.1"
+    value = "capitestclusty2.funnyco.de"
 }
